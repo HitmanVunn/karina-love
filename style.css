@@ -1,0 +1,229 @@
+html {
+  height: 100%;
+}
+
+@font-face {
+ font-family: 'MarckScript';
+ src: url("fonts/MarckScript-Regular.ttf");
+}
+
+body {
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  font-family: MarckScript;
+}
+
+p, h1, h2{
+  margin: 0;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  background: red;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+
+.post{
+  position: absolute;
+  bottom: 10px;
+  right: 120px;
+  font-size: 14px;
+}
+
+.heart .left {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  left: -25px;
+  top: 0px;
+}
+
+.heart .right {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  left: 0px;
+  top: -25px;
+}
+
+
+
+#envelope {
+    position: relative;
+    width: 680px;
+    height: 480px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    z-index: 99;
+    background-color: #00334c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+.flap {
+    border-left: 340px solid transparent;
+    border-right: 340px solid transparent;
+    border-bottom: 82px solid transparent;
+    border-top: 200px solid #00334c;
+    transform-origin: top;
+}
+.pocket {
+    border-left: 340px solid #0077b2;
+    border-right: 340px solid #0077b2;
+    border-bottom: 280px solid #006da3;
+    border-top: 200px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.letter {
+    padding: 5px 20px;
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    top: 5%;
+    border-radius: 6px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+}
+.letter:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    background-color: #eeeff0;
+}
+.words.line1 {
+    top: 15%;
+    width: 20%;
+    height: 7%;
+}
+.words.line2 {
+    top: 30%;
+}
+.words.line3 {
+    top: 50%;
+}
+.words.line4 {
+    top: 70%;
+}
+.open .flap {
+    transform: rotatex(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+.close .flap {
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+.close .letter {
+    transform: translatey(0px);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+.open .letter {
+    transform: translatey(-360px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+.hearts {
+    position: absolute;
+    top: 125px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.heartLetter {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+.heartLetter:before, .heartLetter:after {
+    position: absolute;
+    content: '';
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #d00000;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heartLetter:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.close .heartLetter {
+    opacity: 0;
+    animation: none;
+}
+.a1 {
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+.a2 {
+    left: 55%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 5s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+.a3 {
+    left: 10%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 7s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+@keyframes slideUp {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -600px;
+    }
+}
+
+.envelope-wrapper {
+    height: 380px;
+}
